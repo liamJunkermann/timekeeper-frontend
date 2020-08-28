@@ -11,7 +11,8 @@ steps:
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/timekeeper-staging:${SHORT_SHA}', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/timekeeper-staging:${SHORT_SHA}']
+  args: ['push', 'gcr.io/$PROJECT_ID/timekeeper-staging']
+
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'timekeeper-staging', '--image', 'gcr.io/$PROJECT_ID/timekeeper-staging:${SHORT_SHA}', '--region', 'us-east1', '--platform', 'managed']
 images:

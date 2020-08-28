@@ -9,10 +9,10 @@ class Main extends React.Component{
         return(
             <React.Fragment>
                 <Container>
-                    <Navbar bg="light" expand="lg" style={{marginBottom: "1rem"}} >
+                    <Navbar bg="dark" variant="dark" expand="lg" style={{marginBottom: "1rem", borderBottomLeftRadius: "0.25rem", borderBottomRightRadius: "0.25rem"}} >
                         <Navbar.Brand href="/">Timekeeper</Navbar.Brand>
                         <Navbar.Collapse className="justify-content-end">
-                            <Button variant="outline-primary">
+                            <Button variant="outline-light">
                                 Sign in
                             </Button>
                         </Navbar.Collapse>
