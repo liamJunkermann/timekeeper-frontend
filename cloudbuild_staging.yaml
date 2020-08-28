@@ -8,11 +8,11 @@ steps:
     - 'REACT_APP_STAGING=true'
 
 - name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/timekeeper-staging', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/timekeeper-staging:${SHORT_SHA}', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/timekeeper-staging']
+  args: ['push', 'gcr.io/$PROJECT_ID/timekeeper-staging:${SHORT_SHA}']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'timekeeper-staging', '--image', 'gcr.io/$PROJECT_ID/timekeeper-staging', '--region', 'us-east1', '--platform', 'managed']
+  args: ['beta', 'run', 'deploy', 'timekeeper-staging', '--image', 'gcr.io/$PROJECT_ID/timekeeper-staging:${SHORT_SHA}', '--region', 'us-east1', '--platform', 'managed']
 images:
 - 'gcr.io/%PROJECT_ID/timekeeper-staging'
