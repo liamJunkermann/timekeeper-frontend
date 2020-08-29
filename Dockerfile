@@ -4,6 +4,8 @@ RUN yarn global add serve
 
 WORKDIR /app
 
+RUN yarn run build
+
 COPY build /app/build
 
 ENV PORT 800

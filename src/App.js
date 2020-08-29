@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Main from './components/Main/Main';
+import Main from './components/main/Main';
 
 function App() {
   return (
